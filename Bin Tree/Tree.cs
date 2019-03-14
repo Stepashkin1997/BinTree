@@ -39,22 +39,10 @@ namespace Bin_Tree
                         sec.Pred.Left = sec.Right;
                     }
                 }
-                sec = null;
+                else
+                    sec = null;
             }
         }
-
-        internal class Iterator//итератор
-        {
-            private Tree<K, D> tree;
-            public Node Cur { get; set; }  //текущий элемент
-
-            public Iterator(Tree<K, D> tree)//конструктор с параметрами
-            {
-                this.tree = tree;
-                Cur = tree.Root;
-            }
-        }
-
         internal Tree()//конструктор без параметров
         {
             Length = 0;

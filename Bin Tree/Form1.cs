@@ -8,11 +8,13 @@ namespace Bin_Tree
     public partial class Form1 : Form
     {
         private Tree<int, int> tree;
-        private int deltax = 0;
-        private int count = 1;
+        private int deltax;
+        private int count;
         public Form1()
         {
             InitializeComponent();
+            deltax = 0;
+            count = 1;
             tree = new Tree<int, int>();
             DoubleBuffered = true;
             panel1.AutoScroll = true;
@@ -131,11 +133,6 @@ namespace Bin_Tree
         {
             e.Graphics.TranslateTransform(panel1.AutoScrollPosition.X, panel1.AutoScrollPosition.Y);
             DrawLines(tree.Root, count, panel1.Width / 2, (int)Math.Pow(2, tree.depth) * 20, e.Graphics);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("32".CompareTo("24"));
         }
     }
 }
